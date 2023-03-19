@@ -1,12 +1,11 @@
 Feature: Test Login Functionality
 
-  @ValidLogin
+  @ValidLogin @Smoke
   Scenario: check login with valid credentials
     Given the user is on the login page
     When the user enters valid username and password
     And clicks on the login button
     Then the user is logged in
-
 
   @InvalidCredentialsLogin
   Scenario: check login with invalid credentials

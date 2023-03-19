@@ -1,34 +1,27 @@
-class CartPage{
+class CartPage {
+  async clickCheckoutButton() {
+    await this.checkoutButton.click();
+  }
 
+  async clickContinueShoppingButton() {
+    await this.continueShoppingButton.click();
+  }
 
-    async clickCheckoutButton() {
-        await this.checkoutButton.click();
-    }
+  async clickRemoveFromCartButton() {
+    await this.removeFromCartButton.click();
+  }
 
-    async clickContinueShoppingButton() {
-        await this.continueShoppingButton.click();
-    }
+  get checkoutButton() {
+    return $("//button[@id='checkout']");
+  }
 
-    async clickRemoveFromCartButton() {
-        await this.removeFromCartButton.click();
-    }
+  get continueShoppingButton() {
+    return $("//button[@id='continue-shopping']");
+  }
 
-
-    get checkoutButton() {
-        return $("//button[@id='checkout']");
-    }
-
-    get continueShoppingButton() {
-        return $("//button[@id='continue-shopping']");
-    }
-
-    get removeFromCartButton() {
-        return $("//button[@id='remove-sauce-labs-onesie']"); 
-    }
-    
-
-
-
+  get removeFromCartButton() {
+    return $("//button[@id='remove-sauce-labs-onesie']");
+  }
 }
 
 export default new CartPage();

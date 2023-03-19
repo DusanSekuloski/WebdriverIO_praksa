@@ -1,55 +1,51 @@
 class CheckoutPage {
+  async enterFirstName() {
+    await this.firstNameField.setValue("Dusan");
+  }
 
+  async enterLastName() {
+    await this.lastNameField.setValue("Sekuloski");
+  }
 
-    async enterFirstName() {
-        await this.firstNameField.setValue('Dusan');
-    }
+  async enterZipPostalCode() {
+    await this.zipPostalCodeField.setValue("11050");
+  }
 
-    async enterLastName() {
-        await this.lastNameField.setValue('Sekuloski');   
-     }
+  async clickContinueButton() {
+    await this.continueButton.click();
+  }
 
-    async enterZipPostalCode() {
-        await this.zipPostalCodeField.setValue('11050');
-    }
+  async clickCancelButton() {
+    await this.cancelButton.click();
+  }
 
-    async clickContinueButton() {
-        await this.continueButton.click();
-    }
+  async clickFinishButton() {
+    await this.finishButton.click();
+  }
 
-    async clickCancelButton() {
-        await this.cancelButton.click();
-    }
+  get firstNameField() {
+    return $("//input[@id='first-name']");
+  }
 
-    async clickFinishButton() {
-        await this.finishButton.click();
-    }
-    
+  get lastNameField() {
+    return $("//input[@id='last-name']");
+  }
 
-    get firstNameField() {
-        return $ ("//input[@id='first-name']");
-    }
+  get zipPostalCodeField() {
+    return $("//input[@id='postal-code']");
+  }
 
-    get lastNameField() {
-        return $ ("//input[@id='last-name']");
-    }
+  get continueButton() {
+    return $("//input[@id='continue']");
+  }
 
-    get zipPostalCodeField() {
-        return $ ("//input[@id='postal-code']");
-    }
+  get cancelButton() {
+    return $("//button[@id='cancel']]");
+  }
 
-    get continueButton() {
-        return $ ("//input[@id='continue']");
-    }
-
-    get cancelButton() {
-        return $ ("//button[@id='cancel']]");
-    }
-
-    get finishButton() {
-        return $ ("//button[@id='finish']");
-    }
-
+  get finishButton() {
+    return $("//button[@id='finish']");
+  }
 }
 
 export default new CheckoutPage();

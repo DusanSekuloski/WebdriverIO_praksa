@@ -1,29 +1,25 @@
+import data from "../data/users_data.js";
 class LoginPage {
+  async enterUsernameAndPassword() {
+    await this.usernameField.setValue(data.username);
+    await this.passwordField.setValue(data.password);
+  }
 
+  async clickLoginButton() {
+    await this.loginButton.click();
+  }
 
-    async enterUsernameAndPassword() {
-        await this.usernameField.setValue('standard_user');
-        await this.passwordField.setValue('secret_sauce');
-    }
+  get usernameField() {
+    return $("//input[@data-test='username']");
+  }
 
-    async clickLoginButton() {
-        await this.loginButton.click();
-    }
-    
-    get usernameField() {
-        return $("//input[@data-test='username']"); 
-    } 
-               
-    get passwordField() { 
-        return $("//input[@name='password']"); 
-    }
+  get passwordField() {
+    return $("//input[@name='password']");
+  }
 
-    get loginButton() { 
-        return $("//input[@id='login-button']"); 
-    }
-
-    
-
+  get loginButton() {
+    return $("//input[@id='login-button']");
+  }
 }
 
 export default new LoginPage();
