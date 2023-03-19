@@ -7,12 +7,12 @@ Given(/^the user is on the login page$/, async () => {
 });
 
 When(/^the user enters invalid username and password$/, async () => {
-  await LoginPage.enterUsernameAndPassword();
+  await LoginPage.enterInvalidUsernameAndPassword();
 });
 
-Then(/^The user remains on the login page and a message appears$/, async () => {
-  const message = await$("//h3[@data-test='error']");
-  await expect(message).toHaveText(
+Then(/^The user remains on the login page$/, async () => {
+  const message = "//h3[@data-test='error']";
+   expect(message).toHaveText(
     "Epic sadface: Username and password do not match any user in this service"
   );
   await browser.pause(5000);

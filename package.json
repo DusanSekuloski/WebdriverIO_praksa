@@ -13,7 +13,7 @@
     "wdio": "wdio run ./wdio.conf.js",
     "ValidLogin": "npx wdio run ./wdio.conf.js --cucumberOpts.tagExpression='@ValidLogin' ",
     "InvalidLogin": "npx wdio run ./wdio.conf.js --cucumberOpts.tagExpression='@InvalidCredentialsLogin' ",
-    "SmokeTest": "npx wdio run ./wdio.conf.js --cucumberOpts.tagExpression='@Smoke'"
+    "SmokeTest": "npx wdio run ./wdio.conf.js --cucumberOpts.tagExpression='@Smoke' "
   },
   "dependencies": {
     "webdriverio": "^8.5.9"

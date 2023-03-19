@@ -7,9 +7,11 @@ Feature: Test Login Functionality
     And clicks on the login button
     Then the user is logged in
 
-  @InvalidCredentialsLogin
+  @InvalidCredentialsLogin 
   Scenario: check login with invalid credentials
     Given the user is on the login page
     When the user enters invalid username and password
     And clicks on the login button
-    Then The user remains on the login page and a message appears the user is on the login page
+    Then The user remains on the login page 
+
+

@@ -1,6 +1,6 @@
 Feature: test inventory page functionalities
 
-  @AddToCartButton
+  @AddToCartButton @Smoke
   Scenario: click on add to cart button located on "Sauce Labs Onesie" item
     Given the user is on the inventory page
     When the user clicks on the add to cart button
