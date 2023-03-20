@@ -16,7 +16,7 @@ class InventoryItemPage {
   }
 
   get backToProductsButton() {
-    return "//button[@id='back-to-products']";
+    return $("//button[@id='back-to-products']");
   }
 
   get addToCartButton() {

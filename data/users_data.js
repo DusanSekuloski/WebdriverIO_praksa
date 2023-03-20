@@ -1,6 +1,8 @@
+import * as dotenv from 'dotenv';
+dotenv.config();
+
 export default {} = {
-  validUsername: "standard_user",
-  validPassword: "secret_sauce",
-  invalidUsername: "njfroinfoenfreo",
-  invalidPassword: "wkkrekfks"
+  username: "standard_user",
+  password: process.env.password,
+  invalid_username: "blablatruc"
 };

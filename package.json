@@ -12,10 +12,12 @@
   "scripts": {
     "wdio": "wdio run ./wdio.conf.js",
     "ValidLogin": "npx wdio run ./wdio.conf.js --cucumberOpts.tagExpression='@ValidLogin' ",
+    "AddToCart": "npx wdio run ./wdio.conf.js --cucumberOpts.tagExpression='@AddToCartButton' ",
     "InvalidLogin": "npx wdio run ./wdio.conf.js --cucumberOpts.tagExpression='@InvalidCredentialsLogin' ",
     "SmokeTest": "npx wdio run ./wdio.conf.js --cucumberOpts.tagExpression='@Smoke' "
   },
   "dependencies": {
+    "dotenv": "^16.0.3",
     "webdriverio": "^8.5.9"
   }
 }

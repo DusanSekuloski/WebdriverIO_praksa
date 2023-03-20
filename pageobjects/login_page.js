@@ -1,15 +1,9 @@
 import data from "../data/users_data.js";
 class LoginPage {
-  async enterValidUsernameAndPassword() {
-    await this.usernameField.setValue(data.validUsername);
-    await this.passwordField.setValue(data.validPassword);
+  async enterUsernameAndPassword(username, password) {
+    await this.usernameField.setValue(username);
+    await this.passwordField.setValue(password);
   }
-
-  async enterInvalidUsernameAndPassword() {
-    await this.usernameField.setValue(data.invalidUsername);
-    await this.passwordField.setValue(data.invalidPassword);
-  }
-  
 
   async clickLoginButton() {
     await this.loginButton.click();
