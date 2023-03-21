@@ -31,8 +31,9 @@ class InventoryPage {
     await this.inventorySortButtonAlphabeticalOrderOption.click();
   }
 
-  async clickInventorySortButtonReverseAlphabeticalOrderOption() {
-    await this.inventorySortButtonReverseAlphabeticalOrderOption.click();
+  async selectInventorySortButtonReverseAlphabeticalOrderOption() {
+    const sortDropDown = $("//select[@class='product_sort_container']")
+    await sortDropDown.selectByVisibleText('Name (Z to A)');
   }
 
   async clickInventorySortButtonLowToHighPriceOption() {
@@ -92,4 +93,4 @@ class InventoryPage {
   }
 }
 
-export default new LoginPage();
+export default new InventoryPage();
