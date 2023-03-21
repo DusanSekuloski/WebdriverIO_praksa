@@ -2,7 +2,8 @@
   "name": "my-new-project",
   "type": "module",
   "devDependencies": {
-    "@wdio/cli": "^8.5.9",
+    "@faker-js/faker": "^7.6.0",
+    "@wdio/cli": "^8.6.2",
     "@wdio/cucumber-framework": "^8.5.6",
     "@wdio/local-runner": "^8.5.9",
     "@wdio/spec-reporter": "^8.4.0",
@@ -10,6 +11,14 @@
     "wdio-chromedriver-service": "^8.1.1"
   },
   "scripts": {
-    "wdio": "wdio run ./wdio.conf.js"
+    "wdio": "wdio run ./wdio.conf.js",
+    "ValidLogin": "npx wdio run ./wdio.conf.js --cucumberOpts.tagExpression='@ValidLogin' ",
+    "AddToCart": "npx wdio run ./wdio.conf.js --cucumberOpts.tagExpression='@AddToCartButton' ",
+    "InvalidLogin": "npx wdio run ./wdio.conf.js --cucumberOpts.tagExpression='@InvalidCredentialsLogin' ",
+    "SmokeTest": "npx wdio run ./wdio.conf.js --cucumberOpts.tagExpression='@Smoke' "
+  },
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "webdriverio": "^8.5.9"
   }
 }

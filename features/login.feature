@@ -1,12 +1,17 @@
-Feature: The Internet Guinea Pig Website
+Feature: Test Login Functionality
 
-  Scenario Outline: As a user, I can log into the secure area
+  @ValidLogin @Smoke
+  Scenario: check login with valid credentials
+    Given the user is on the login page
+    When the user enters valid username and password
+    And clicks on the login button
+    Then the user is logged in
 
-    Given I am on the login page
-    When I login with <username> and <password>
-    Then I should see a flash message saying <message>
+  @InvalidCredentialsLogin @Smoke
+  Scenario: check login with invalid credentials
+    Given the user is on the login page
+    When the user enters invalid username and password
+    And clicks on the login button
+    Then The user remains on the login page 
 
-    Examples:
-      | username | password             | message                        |
-      | tomsmith | SuperSecretPassword! | You logged into a secure area! |
-      | foobar   | barfoo               | Your username is invalid!      |
+
