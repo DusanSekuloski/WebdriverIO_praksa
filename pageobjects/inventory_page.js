@@ -1,4 +1,12 @@
 class InventoryPage {
+
+
+  async openCartPage() {
+    await this.cartButton.click();
+    await browser.url("https://www.saucedemo.com/cart.html");
+    await expect(browser).toHaveUrl("https://www.saucedemo.com/cart.html");
+  }
+
   async clickCartButton() {
     await this.cartButton.click();
   }
@@ -23,25 +31,28 @@ class InventoryPage {
     await this.itemDescriptionPageImageLink.click();
   }
 
-  async clickInventorySortButton() {
-    await this.inventorySortButton.click();
+  async clickSortButton() {
+    await this.sortButton.click();
   }
 
-  async clickInventorySortButtonAlphabeticalOrderOption() {
-    await this.inventorySortButtonAlphabeticalOrderOption.click();
+  async selectSortAToZ() {
+    const sortDropDown = $("//select[@class='product_sort_container']")
+    await sortDropDown.selectByVisibleText('Name (A to Z)');
   }
 
-  async selectInventorySortButtonReverseAlphabeticalOrderOption() {
+  async selectSortZToA() {
     const sortDropDown = $("//select[@class='product_sort_container']")
     await sortDropDown.selectByVisibleText('Name (Z to A)');
   }
 
-  async clickInventorySortButtonLowToHighPriceOption() {
-    await this.inventorySortButtonLowToHighPriceOption.click();
+  async selectSortLowToHighPrice() {
+    const sortDropDown = $("//select[@class='product_sort_container']")
+    await sortDropDown.selectByVisibleText('Price (low to high)');
   }
 
-  async clickInventorySortButtonHighToLowPriceOption() {
-    await this.inventorySortButtonHighToLowPriceOption.click();
+  async selectSortHighToLowPrice() {
+    const sortDropDown = $("//select[@class='product_sort_container']")
+    await sortDropDown.selectByVisibleText('Price (high to low)');
   }
 
   get cartButton() {
@@ -61,34 +72,30 @@ class InventoryPage {
   }
 
   get itemDescriptionPageTextLink() {
-    return $(
-      "//*[@class='inventory_item_name' and normalize-space()='Sauce Labs Onesie']"
-    );
+    return $("//*[@class='inventory_item_name' and normalize-space()='Sauce Labs Onesie']");
   }
 
   get itemDescriptionPageImageLink() {
-    return $(
-      "//*[@class='inventory_item_name' and normalize-space()='Sauce Labs Onesie']"
-    );
+    return $("//*[@class='inventory_item_name' and normalize-space()='Sauce Labs Onesie']");
   }
 
-  get inventorySortButton() {
+  get sortButton() {
     return $("//select[@data-test='product_sort_container']");
   }
 
-  get inventorySortButtonAlphabeticalOrderOption() {
+  get sortAToZ() {
     return $("//option[@value='az']");
   }
 
-  get inventorySortButtonReverseAlphabeticalOrderOption() {
+  get sortZToA() {
     return $("//option[@value='za']");
   }
 
-  get inventorySortButtonLowToHighPriceOption() {
+  get sortLowToHighPrice() {
     return $("//option[@value='lohi']");
   }
 
-  get inventorySortButtonHighToLowPriceOption() {
+  get sortHighToLowPrice() {
     return $("//option[@value='hilo']");
   }
 }

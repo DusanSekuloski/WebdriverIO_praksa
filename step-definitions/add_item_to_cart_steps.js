@@ -10,8 +10,7 @@ When(/^the user clicks on the add to cart button$/, async () => {
 });
 
 Then(/^the item should be added to the cart$/, async () => {
-  await browser.pause(5000);
+  await browser.pause(2000);
   const elem = await $("//button[@data-test='remove-sauce-labs-onesie']");
-  return await expect(elem).toHaveId("remove-sauce-labs-onesie");
-}
-); 
+  await expect(elem).toHaveId("remove-sauce-labs-onesie");
+});
