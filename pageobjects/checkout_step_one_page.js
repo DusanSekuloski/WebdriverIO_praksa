@@ -1,12 +1,14 @@
-import data from "../data/users_data.js";
+import { faker } from "@faker-js/faker";
 class CheckoutStepOnePage {
-  
-  async enterCheckoutInformation(firstName, lastName, zipCode) {
-    await this.firstNameField.setValue(firstName);
-    await this.lastNameField.setValue(lastName);
-    await this.zipPostalCodeField.setValue(zipCode);
+  async enterCheckoutInformation() {
+    const randomFirstName = faker.name.firstName();
+    const randomLastName = faker.name.lastName();
+    const randomZipCode = faker.datatype.number({ min: 10000, max: 99999 });
+    await this.firstNameField.setValue(randomFirstName);
+    await this.lastNameField.setValue(randomLastName);
+    await this.zipPostalCodeField.setValue(randomZipCode);
   }
-  
+
   async enterFirstName() {
     await this.firstNameField.setValue(firstName);
   }
@@ -55,7 +57,9 @@ class CheckoutStepOnePage {
     return $("//button[@name='back-to-products']");
   }
 
+  get firstNameMessageError() {
+    return $("//h3[text()='Error: First Name is required']");
   }
-
+}
 
 export default new CheckoutStepOnePage();

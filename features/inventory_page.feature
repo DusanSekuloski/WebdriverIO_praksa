@@ -4,7 +4,7 @@ Feature: test inventory page functionalities
     Given the user is logged in on the Saucedemo website
     And the user is on the inventory page
 
-  @AddItemToCart 
+  @AddItemToCart
   Scenario: click on add to cart button located on "Sauce Labs Onesie" item
     When the user clicks on the add to cart button
     Then the item should be added to the cart

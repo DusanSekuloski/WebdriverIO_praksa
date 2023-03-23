@@ -6,8 +6,14 @@ Feature: test checkout step one page functionalities
     And the user clicks on the checkout button
 
   @OpenSecondCheckoutPage
-  Scenario: the user clicks on the continue button in order to go to the checkout step two page
+  Scenario: check if the user goes to the checkout step two page when all the checkout information input fields are filled out
     Given the user is on the checkout step one page
     When the user enters first name, last name and zip code
     And the user clicks on the continue button
     Then the user is on the checkout step two page
+
+  @RemainOnFirstCheckoutPage
+  Scenario: check if the user goes to the checkout step two page when none of the checkout information input fields are filled out
+    Given the user is on the checkout step one page
+    When the user clicks on the continue button
+    Then the user remains on the checkout step one page

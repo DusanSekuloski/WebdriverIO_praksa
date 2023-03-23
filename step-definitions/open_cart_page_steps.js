@@ -1,5 +1,11 @@
 import { Given, When, Then } from "@wdio/cucumber-framework";
 import InventoryPage from "../pageobjects/inventory_page.js";
+import LoginPage from "../pageobjects/login_page.js";
+import users_data from "../data/users_data.js";
+
+Given(/^the user is logged in on the Saucedemo website$/, async () => {
+  await LoginPage.logIn(users_data.username, users_data.password);
+});
 
 When(/^the user clicks on the cart button$/, async () => {
   await InventoryPage.clickCartButton();

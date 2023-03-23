@@ -1,6 +1,4 @@
 class InventoryPage {
-
-
   async openCartPage() {
     await this.cartButton.click();
     await browser.url("https://www.saucedemo.com/cart.html");
@@ -36,23 +34,23 @@ class InventoryPage {
   }
 
   async selectSortAToZ() {
-    const sortDropDown = $("//select[@class='product_sort_container']")
-    await sortDropDown.selectByVisibleText('Name (A to Z)');
+    const sortDropDown = $("//select[@class='product_sort_container']");
+    await sortDropDown.selectByVisibleText("Name (A to Z)");
   }
 
   async selectSortZToA() {
-    const sortDropDown = $("//select[@class='product_sort_container']")
-    await sortDropDown.selectByVisibleText('Name (Z to A)');
+    const sortDropDown = $("//select[@class='product_sort_container']");
+    await sortDropDown.selectByVisibleText("Name (Z to A)");
   }
 
   async selectSortLowToHighPrice() {
-    const sortDropDown = $("//select[@class='product_sort_container']")
-    await sortDropDown.selectByVisibleText('Price (low to high)');
+    const sortDropDown = $("//select[@class='product_sort_container']");
+    await sortDropDown.selectByVisibleText("Price (low to high)");
   }
 
   async selectSortHighToLowPrice() {
-    const sortDropDown = $("//select[@class='product_sort_container']")
-    await sortDropDown.selectByVisibleText('Price (high to low)');
+    const sortDropDown = $("//select[@class='product_sort_container']");
+    await sortDropDown.selectByVisibleText("Price (high to low)");
   }
 
   get cartButton() {
@@ -72,11 +70,15 @@ class InventoryPage {
   }
 
   get itemDescriptionPageTextLink() {
-    return $("//*[@class='inventory_item_name' and normalize-space()='Sauce Labs Onesie']");
+    return $(
+      "//*[@class='inventory_item_name' and normalize-space()='Sauce Labs Onesie']"
+    );
   }
 
   get itemDescriptionPageImageLink() {
-    return $("//*[@class='inventory_item_name' and normalize-space()='Sauce Labs Onesie']");
+    return $(
+      "//*[@class='inventory_item_name' and normalize-space()='Sauce Labs Onesie']"
+    );
   }
 
   get sortButton() {

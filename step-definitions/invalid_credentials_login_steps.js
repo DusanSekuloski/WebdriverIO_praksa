@@ -5,12 +5,13 @@ import LoginPage from "../pageobjects/login_page.js";
 
 Given(/^the user is on the login page$/, async () => {
   await browser.url("/");
+  await expect(browser).toHaveUrl("https://www.saucedemo.com/");
 });
 
 When(/^the user enters invalid username and password$/, async () => {
   await LoginPage.enterUsernameAndPassword(
     users_data.invalidUsername,
-    users_data.password
+    users_data.invalidPassword
   );
 });
 

@@ -7,6 +7,7 @@ Given(/^the user is on the inventory page$/, async () => {
 
 When(/^the user clicks on the add to cart button$/, async () => {
   await InventoryPage.clickAddToCartButton();
+  await browser.pause(2000);
 });
 
 Then(/^the item should be added to the cart$/, async () => {

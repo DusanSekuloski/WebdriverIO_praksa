@@ -3,8 +3,8 @@ Feature: test checkout complete page functionalities
   Background: 
     Given the user is logged in on the Saucedemo website
 
-    @BackHomeButton
-  Scenario: the user clicks on the back home button and is taken to the inventory page 
+  @BackHomeButton
+  Scenario: the user clicks on the back home button and is taken to the inventory page
     Given the user is on the inventory page
     When the user clicks on the add to cart button
     And the user clicks on the cart button
