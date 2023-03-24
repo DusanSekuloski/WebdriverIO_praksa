@@ -5,19 +5,18 @@ import LoginPage from "../pageobjects/login_page.js";
 
 Given(/^the user is on the login page$/, async () => {
   await browser.url("/");
+  await expect(browser).toHaveUrl("https://www.saucedemo.com/");
 });
 
 When(/^the user enters invalid username and password$/, async () => {
-  await LoginPage.enterUsernameAndPassword(users_data.invalid_username, users_data.password)
+  await LoginPage.enterUsernameAndPassword(
+    users_data.invalidUsername,
+    users_data.invalidPassword
+  );
 });
 
 Then(/^The user remains on the login page$/, async () => {
-
-  await browser.url('https://www.saucedemo.com/')
-  await expect(browser).toHaveUrl('https://www.saucedemo.com/')
-  await browser.pause(3000);
+  await browser.url("https://www.saucedemo.com/");
+  await expect(browser).toHaveUrl("https://www.saucedemo.com/");
+  await browser.pause(2000);
 });
-
-//const message = "//h3[@data-test='error']";
-//  expect(message).toHaveText(
-  //  "Epic sadface: Username and password do not match any user in this service"

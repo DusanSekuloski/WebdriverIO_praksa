@@ -46,6 +46,10 @@ class HamburgerMenu {
   get resetAppStateButton() {
     return $("//a[@id='reset_sidebar_link']");
   }
+
+  get hamburgerMenuWrapPage() {
+    return $("//div[@class='bm-menu-wrap']");
+  }
 }
 
 export default new HamburgerMenu();
